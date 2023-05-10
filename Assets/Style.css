@@ -1,0 +1,21 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: auto;
+    border: 1px solid rgb(133, 188, 240);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+/*general set up for all elements in each "page"*/
+.page {
+    border: 2px dotted red;
+
+}
+/*targets button style for quiz*/
