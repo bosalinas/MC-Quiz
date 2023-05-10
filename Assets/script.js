@@ -6,7 +6,6 @@ const introPage = document.getElementById("intro-page");
 const startQuizBtn = document.getElementById("startbtn");
 const quizSections = document.querySelector(".quiz");
 let timeStart = 10;
-let shuffleQuestions = questions.sort() = Math.floor(Math.random())
 const timerEl = document.getElementById("timer");
 const questions = [
     {
@@ -31,14 +30,17 @@ const questions = [
     }
 ];
 
+
+let shuffleQuestions = Math.floor(Math.random(questions.length));
+console.log('shuffle', shuffleQuestions);
 //2 functions generate questions validate answers
-function questions() {
+// function questions() {
     
-}
+// }
 
-function validate() {
+// function validate() {
 
-}
+// }
 
 /*event listener for showing quiz completed and hiding quiz questions*/
 
