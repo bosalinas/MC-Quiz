@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./Assets/Style.css" />
+    <title>Multiple Choice Quiz</title>
+</head>
+
+<body>
+
+    <header class="intro page" id="intro-page">
+        <section>
+            <h1 class="intro-title" id="intro-title">Javascript Quiz Game</h1>
+            <p>Let's test your knowledge on Javascript fundamentals.</p>
+            <p>Click start quiz to begin!</p>
+            <button id="startbtn">Start Quiz!</button>
+        </section>
+    </header>
+
+    <main class="quiz page">
+        <section class="top-bar">
+            <h2 id=high-scores>View High Scores</h2>
+            <h2 class="timer">Time: <span id="timer"></span></h2>
+        </section>
+
+
+        <section class="question-container">
+            <h1 id=buttons>Question:</h1>
+            <button class="options" id=option-one>OPT</button>
+            <button class="options" id=option-two>OPT</button>
+            <button class="options" id=option-three>OPT</button>
+            <button class="options" id=option-four>OPT</button>
+        </section>
+
+        <footer class="feedbackbar" id="feedbackbar">Answer Feedback</footer>
+
+    </main>
+
+    <section class="enter-initials page">
+        <h2>You have completed your Quiz!</h2>
+        <p id="quiz-score">Your score is</p>
+        <formc id="formsubmit">
+            <label for="initials">Enter Initials </label>
+            <input type="text" name="initials" id="JSinitials">
+        </form>
+        <button type= "submit" id="submit-initials">Submit</button>
+    </section>
+
+    <!-- make sep html file
+         <section class="HS page" id="HS-page">
+        <h2>High Score List</h2>
+        <ol class="score-list" id="score-list">
+            <li>Display score</li>
+            <li>list here</li>
+        </ol>
+        <button class="button" id="backbutton">Go Back</button>
+        <button class="button" id="clearbutton">Clear Scores</button>
+    </section> -->
+
+    <script src="./Assets/script.js"></script>
+</body>
+
+</html>
