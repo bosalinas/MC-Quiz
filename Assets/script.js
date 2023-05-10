@@ -5,43 +5,47 @@ event listener */
 const introPage = document.getElementById("intro-page");
 const startQuizBtn = document.getElementById("startbtn");
 const quizSections = document.querySelector(".quiz");
-let timeStart = 10;
+let timeStart = 5;
 const timerEl = document.getElementById("timer");
-const questions = [
+let index = 0;
+const questionsArray = [
     {
-        title:"What is 1 + 1?",
-        options:["1","2","3","4"],
-        answer:["2"]
+        title: "What is 1 + 1?",
+        options: ["1", "2", "3", "4"],
+        answer: ["2"]
     },
     {
-        title:"What is 2 + 2?",
-        options:["1","2","3","4"],
-        answer:["4"]
+        title: "What is 2 + 2?",
+        options: ["1", "2", "3", "4"],
+        answer: ["4"]
     },
     {
-        title:"What is 3 + 3?",
-        options:["6","2","3","4"],
-        answer:["6"]
+        title: "What is 3 + 3?",
+        options: ["6", "2", "3", "4"],
+        answer: ["6"]
     },
     {
-        title:"What is 4+ 4?",
-        options:["1","8","3","4"],
-        answer:["8"]
+        title: "What is 4+ 4?",
+        options: ["1", "8", "3", "4"],
+        answer: ["8"]
     }
+    
 ];
 
-
-let shuffleQuestions = Math.floor(Math.random(questions.length));
-console.log('shuffle', shuffleQuestions);
-//2 functions generate questions validate answers
-// function questions() {
-    
-// }
-
-// function validate() {
-
-// }
-
+//I need 2 functions. Generate questions and validate answers
+function questionsDisplay() {
+    //display quesetions one at a time
+    const question = questionsArray[index];
+    console.log(question);
+    //get options
+    // for (let i = 0; i < questionsArray.length; i++) {
+    //     const option = question.??[i];
+    //     console.log("option", option);
+    //     console.log(questionsArray[i].title);
+    //     console.log(questionsArray[i].options);
+    //     console.log(questionsArray[i].answer);
+    // }
+};
 /*event listener for showing quiz completed and hiding quiz questions*/
 
 function startQuiz() {
@@ -60,7 +64,7 @@ function clocktick() {
     timeStart--
     // console.log("timestart", timeStart);
     timerEl.textContent = timeStart;
-    if(timeStart === 0) {
+    if (timeStart === 0) {
         quizDone()
     }
 }
@@ -72,9 +76,17 @@ function quizDone() {
 }
 
 const endScore = document.querySelector(".enter-initials");
-    endScore.style.display = "none";
+endScore.style.display = "none";
 
-    quizSections.style.display = "none";
+quizSections.style.display = "none";
 const btnThree = document.getElementById("formsubmit");
 
 startQuizBtn.onclick = startQuiz 
+
+//take away time from incorrect answers
+//html & java sheet for highscore JSON
+
+
+
+ // let shuffleQuestions = Math.floor(Math.random(questions.length));
+    // console.log('shuffle', shuffleQuestions);
