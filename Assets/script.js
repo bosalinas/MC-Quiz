@@ -1,12 +1,15 @@
-/*header*/
-
-/*intro page that needs to "hide" and quiz page needs to "show" once start quiz button is clicked
-event listener */
 const introPage = document.getElementById("intro-page");
 const startQuizBtn = document.getElementById("startbtn");
 const quizSections = document.querySelector(".quiz");
 let timeStart = 5;
 const timerEl = document.getElementById("timer");
+var index = 0;
+var score = 0;
+var incorrect = 10;
+var button1 = getElementById("option1");
+var button2 = getElementById("option2");
+var button3 = getElementById("option3");
+var button4 = getElementById("option4");
 
 const questionsArray = [
     {
@@ -31,30 +34,8 @@ const questionsArray = [
     },
 ];
 
-var index = 0;
-var score = 0;
-var incorrect = 10;
-var questionTitle = getElementById("question-title");
-var questionOptions = getElementById("options");
-
-function render(index) {
-
-    for (let i = 0; i < questionsArray.length; i++) {
-        var userQuestion = questionsArray[index].questionTitle;
-        var userChoices = questionsArray[index].questionOptions;
-    }
-
-};
-
-
-
-
-
-
-
-
-
-
+var userQuestion = questionsArray[index].title;
+var userChoices = questionsArray[index].options;
 
 //I need 2 functions. Generate questions and validate answers
 // function questionsDisplay() {
@@ -71,6 +52,9 @@ function startQuiz() {
     //start timer
     timerId = setInterval(clocktick, 1000);
     //start shuffling questions
+    questionTitleEl.textContent  = userQuestion;
+    questionOptionsEl.textContent  = userChoices;
+
 };
 
 function clocktick() {
@@ -80,8 +64,7 @@ function clocktick() {
     if (timeStart === 0) {
         quizDone()
     }
-    if ()
-}
+};
 
 function quizDone() {
     clearInterval(timerId);
