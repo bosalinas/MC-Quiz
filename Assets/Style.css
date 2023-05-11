@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    background-image: url(/Assets/Images/background.jpg);
+    background-image: url(./Images/background.jpg);
     background-size: cover;
 }
 /*general set up for all elements in each "page"*/
