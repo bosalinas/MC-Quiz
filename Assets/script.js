@@ -1,21 +1,22 @@
 const introPage = document.getElementById("intro-page");
 const startQuizBtn = document.getElementById("startbtn");
 const quizSections = document.querySelector(".quiz");
-let timeStart = 5;
+let timeStart = 100;
 const timerEl = document.getElementById("timer");
 var index = 0;
 var score = 0;
 var incorrect = 10;
-var button1 = getElementById("option1");
-var button2 = getElementById("option2");
-var button3 = getElementById("option3");
-var button4 = getElementById("option4");
+var title = document.getElementById("question-title");
+var button1 = document.getElementById("option1");
+var button2 = document.getElementById("option2");
+var button3 = document.getElementById("option3");
+var button4 = document.getElementById("option4");
 
 const questionsArray = [
     {
-        title: "What is 1 + 1?",
-        options: ["1", "2", "3", "4"],
-        answer: ["2"]
+        title: "What is the file type for Javascript?",
+        options: [".xs", ".js", ",jss", ".java"],
+        answer: [".js"]
     },
     {
         title: "What is 2 + 2?",
@@ -33,14 +34,35 @@ const questionsArray = [
         answer: ["8"]
     },
 ];
+//function to render the questions
+function renderQuestion() {
+    var userQuestion = questionsArray[index].title;
+    var userChoices = questionsArray[index].options;
+    title.textContent = userQuestion;
+    button1.textContent = userChoices[0];
+    button2.textContent = userChoices[1];
+    button3.textContent = userChoices[2];
+    button4.textContent = userChoices[3];
 
-var userQuestion = questionsArray[index].title;
-var userChoices = questionsArray[index].options;
+    // for (var i = 0; i < questionsArray.length; i++) {
+    // };
+};
 
-//I need 2 functions. Generate questions and validate answers
-// function questionsDisplay() {
-// };
-/*event listener for showing quiz completed and hiding quiz questions*/
+questionsArray++;
+
+//function compare(event) {
+//    var element = event.target;
+//
+//    if (questionsArray >= questionsArray.length) {
+//        // All done will append last page with user stats
+//        allDone();
+//        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questionsArray.length + " Correct!";
+//    } else {
+//        renderQuestions();
+//    }
+//};
+
+
 
 function startQuiz() {
     if (introPage.style.display === "none") {
@@ -51,11 +73,16 @@ function startQuiz() {
     quizSections.style.display = "block";
     //start timer
     timerId = setInterval(clocktick, 1000);
-    //start shuffling questions
-    questionTitleEl.textContent  = userQuestion;
-    questionOptionsEl.textContent  = userChoices;
-
 };
+
+// userChoices.forEach(function (newItem) {
+//         var listItem = document.createElement("li");
+//         listItem.textContent = newItem;
+//         questionsDiv.appendChild(ulCreate);
+//         ulCreate.appendChild(listItem);
+//         listItem.addEventListener("click", (compare));
+//     });
+
 
 function clocktick() {
     timeStart--
