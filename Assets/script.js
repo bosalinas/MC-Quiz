@@ -34,6 +34,9 @@ const questionsArray = [
         answer: ["8"]
     },
 ];
+
+console.log("array length", questionsArray.length);
+
 //function to render the questions
 function renderQuestion() {
     var userQuestion = questionsArray[index].title;
@@ -48,19 +51,21 @@ function renderQuestion() {
     // };
 };
 
-questionsArray++;
+// const button = document.querySelector(".options");
 
-//function compare(event) {
-//    var element = event.target;
-//
-//    if (questionsArray >= questionsArray.length) {
-//        // All done will append last page with user stats
-//        allDone();
-//        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questionsArray.length + " Correct!";
-//    } else {
-//        renderQuestions();
-//    }
-//};
+// button.addEventListener("click", function checkAnswer(event) {
+//     index++;
+//     console.log(event.target.className);
+// });
+
+
+const button = document.querySelector(".options");
+
+button.addEventListener("click", checkAnswer);
+
+function checkAnswer(event) {
+    index++;
+};
 
 
 
@@ -73,6 +78,7 @@ function startQuiz() {
     quizSections.style.display = "block";
     //start timer
     timerId = setInterval(clocktick, 1000);
+    renderQuestion();
 };
 
 // userChoices.forEach(function (newItem) {
