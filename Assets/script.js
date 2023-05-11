@@ -7,7 +7,7 @@ const startQuizBtn = document.getElementById("startbtn");
 const quizSections = document.querySelector(".quiz");
 let timeStart = 5;
 const timerEl = document.getElementById("timer");
-let index = 0;
+
 const questionsArray = [
     {
         title: "What is 1 + 1?",
@@ -31,10 +31,30 @@ const questionsArray = [
     },
 ];
 
- for (let i = 0; i < questionsArray.length; i++) {
-        var questionObj = questionsArray[i];
-        console.log(questionObj, questionObj.name);
+var index = 0;
+var score = 0;
+var incorrect = 10;
+var questionTitle = getElementById("question-title");
+var questionOptions = getElementById("options");
+
+function render(index) {
+
+    for (let i = 0; i < questionsArray.length; i++) {
+        var userQuestion = questionsArray[index].questionTitle;
+        var userChoices = questionsArray[index].questionOptions;
     }
+
+};
+
+
+
+
+
+
+
+
+
+
 
 //I need 2 functions. Generate questions and validate answers
 // function questionsDisplay() {
@@ -60,6 +80,7 @@ function clocktick() {
     if (timeStart === 0) {
         quizDone()
     }
+    if ()
 }
 
 function quizDone() {
@@ -74,7 +95,7 @@ endScore.style.display = "none";
 quizSections.style.display = "none";
 const btnThree = document.getElementById("formsubmit");
 
-startQuizBtn.onclick = startQuiz 
+startQuizBtn.onclick = startQuiz
 
 //take away time from incorrect answers
 //html & java sheet for highscore JSON
