@@ -60,10 +60,16 @@ function renderQuestion() {
 
 
 const button = document.querySelector(".options");
-
 button.addEventListener("click", checkAnswer);
+var correctAnswers = questionsArray[index].answer;
 
 function checkAnswer(event) {
+    if {
+        userChoices === correctAnswers
+    };
+    else {
+        //timeleft - incorrect
+    };
     index++;
 };
 
