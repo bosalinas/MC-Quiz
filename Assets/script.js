@@ -28,24 +28,17 @@ const questionsArray = [
         title: "What is 4+ 4?",
         options: ["1", "8", "3", "4"],
         answer: ["8"]
-    }
-    
+    },
 ];
 
+ for (let i = 0; i < questionsArray.length; i++) {
+        var questionObj = questionsArray[i];
+        console.log(questionObj, questionObj.name);
+    }
+
 //I need 2 functions. Generate questions and validate answers
-function questionsDisplay() {
-    //display quesetions one at a time
-    const question = questionsArray[index];
-    console.log(question);
-    //get options
-    // for (let i = 0; i < questionsArray.length; i++) {
-    //     const option = question.??[i];
-    //     console.log("option", option);
-    //     console.log(questionsArray[i].title);
-    //     console.log(questionsArray[i].options);
-    //     console.log(questionsArray[i].answer);
-    // }
-};
+// function questionsDisplay() {
+// };
 /*event listener for showing quiz completed and hiding quiz questions*/
 
 function startQuiz() {
