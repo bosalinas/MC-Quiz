@@ -58,14 +58,17 @@ function renderQuestion() {
 //     console.log(event.target.className);
 // });
 
-
-const button = document.querySelector(".options");
-button.addEventListener("click", checkAnswer);
 var correctAnswers = questionsArray[index].answer;
+var button = document.querySelector(".question-container");
+
+button.addEventListener("click", checkAnswer);
 
 function checkAnswer(event) {
-    if {
-        userChoices === correctAnswers
+    console.log(event.target.textContent);
+
+    let userChoice = event.target.textContent;
+
+    if (userChoice === correctAnswers) {
     };
     else {
         //timeleft - incorrect
